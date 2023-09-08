@@ -14,5 +14,6 @@ declare function PromiseAll<T extends any[]>(arg: readonly [...T]): Promise<{
   [K in keyof T]: Awaited<T[K]>
 }>
 
+
 // 应推导出 `Promise<[number, 42, string]>`
 const p = PromiseAll([promise1, promise2, promise3] as const)
